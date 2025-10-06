@@ -1,4 +1,5 @@
 import { Routes, Route, NavLink } from 'react-router-dom'
+import BarberPoleCursor from "./components/BarberPoleCursor.jsx";
 import { Scissors, Phone, Calendar, Instagram, Linkedin } from 'lucide-react'
 import Home from './pages/Home.jsx'
 import Services from './pages/Services.jsx'
@@ -9,6 +10,7 @@ import About from './pages/About.jsx'
 export default function App() {
   return (
     <div className="min-h-screen flex flex-col">
+      <BarberPoleCursor/>
       <Header />
       <main className="flex-1">
         <Routes>
