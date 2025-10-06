@@ -5,7 +5,7 @@ import './index.css'
 
 
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter basename="/elia-barber-shop">
+  <BrowserRouter basename="/ELIA_BarberShop_WebSite">
     <App />
   </BrowserRouter>
 )
