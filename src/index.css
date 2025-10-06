@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+/* v4 theming via @theme — replaces tailwind.config.js colors */
+@theme {
+  --color-brand-bg: #0f172a;      /* slate-900 */
+  --color-brand-card: #111827;    /* gray-900 */
+  --color-brand-accent: #f59e0b;  /* amber-500 */
+  --color-brand-red: #ef4444;     /* red-500 */
+  --color-brand-text: #f8fafc;    /* slate-50 */
+  --color-brand-sub: #94a3b8;     /* slate-400 */
+
+  --shadow-soft: 0 10px 25px rgba(0,0,0,0.15);
+  --radius-xl2: 1.25rem;
+}
+
+/* your utility classes using @apply still work */
+html, body, #root { height: 100%; }
+body { @apply bg-brand-bg text-brand-text antialiased; }
+.container { @apply max-w-6xl mx-auto px-4; }
+.btn { @apply inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-brand-accent text-black font-semibold hover:opacity-90 transition; }
+.card { @apply bg-brand-card/80 backdrop-blur rounded-2xl shadow-[var(--shadow-soft)] border border-white/5; }
+.link { @apply text-brand-accent hover:underline; }
+/* in your global index.css */
+.gallery-img { @apply rounded-2xl object-cover w-full transition-transform duration-300 hover:scale-105 hover:shadow-xl; }
+
