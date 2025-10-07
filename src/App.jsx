@@ -53,7 +53,7 @@ function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-2">
-          <a href="tel:+12065551234" className="btn hidden sm:inline-flex"><Phone className="w-4 h-4" /> (206) 555‑1234</a>
+          <a href="tel:+14255204447" className="btn hidden sm:inline-flex"><Phone className="w-4 h-4" /> (425) 520‑4447</a>
           <NavLink to="/booking" className="btn"><Calendar className="w-4 h-4" /> Book</NavLink>
         </div>
       </div>
