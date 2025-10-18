@@ -48,10 +48,9 @@ function NavItem({ to, label, onClick }) {
       onClick={onClick}
       end
       className={({ isActive }) =>
-        `text-sm ${
-          isActive
-            ? "text-brand-accent"
-            : "text-brand-sub hover:text-white transition"
+        `text-sm ${isActive
+          ? "text-brand-accent"
+          : "text-brand-sub hover:text-white transition"
         }`
       }
     >
@@ -96,14 +95,10 @@ function Header() {
         {/* 🔹 Right-side Buttons + Burger */}
         <div className="flex items-center gap-2">
           {/* Phone (hidden on very small screens) */}
-          <a
-            href="tel:+14255204447"
-            className="btn hidden sm:inline-flex"
-          >
+          <a href="tel:+14255204447" className="btn hidden sm:inline-flex">
             <Phone className="w-4 h-4" /> (425) 520-4447
           </a>
 
-          {/* Booking Button */}
           <NavLink to="/booking" className="btn hidden sm:inline-flex">
             <Calendar className="w-4 h-4" /> Book
           </NavLink>

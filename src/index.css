@@ -75,3 +75,9 @@ body {
 .animate-slide-down {
   animation: slideDown 0.3s ease forwards;
 }
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl font-semibold text-black bg-brand-accent hover:opacity-90 transition;
+  min-height: 48px; /* ensure same height */
+  white-space: nowrap; /* prevent line breaks */
+}
