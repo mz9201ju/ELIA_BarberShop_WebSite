@@ -78,7 +78,7 @@ function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-brand-bg/70 backdrop-blur">
-      <div className="container flex items-center justify-between h-16">
+      <div className="container flex items-center justify-between h-16 overflow-x-hidden px-2 sm:px-4">
         {/* 🔹 Logo */}
         <div className="flex items-center gap-2 text-brand-text font-bold">
           <Scissors className="w-6 h-6 text-brand-accent" />
@@ -93,20 +93,25 @@ function Header() {
         </nav>
 
         {/* 🔹 Right-side Buttons + Burger */}
-        <div className="flex items-center gap-2">
-          {/* Phone (hidden on very small screens) */}
-          <a href="tel:+14255204447" className="btn hidden sm:inline-flex">
+        <div className="flex items-center gap-1 sm:gap-2 shrink-0">
+          <a
+            href="tel:+14255204447"
+            className="btn hidden sm:inline-flex h-12 min-w-[140px] justify-center whitespace-nowrap"
+          >
             <Phone className="w-4 h-4" /> (425) 520-4447
           </a>
 
-          <NavLink to="/booking" className="btn hidden sm:inline-flex">
+          <NavLink
+            to="/booking"
+            className="btn hidden sm:inline-flex h-12 min-w-[100px] justify-center whitespace-nowrap"
+          >
             <Calendar className="w-4 h-4" /> Book
           </NavLink>
 
-          {/* 🍔 Burger Menu (mobile only) */}
+          {/* Burger menu icon */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden text-brand-accent"
+            className="md:hidden text-brand-accent ml-1"
             aria-label="Toggle menu"
           >
             {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
