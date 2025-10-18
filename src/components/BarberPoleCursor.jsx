@@ -25,6 +25,7 @@ export default function BarberPoleCursor() {
                 transform: "translate(-50%, -50%)",
                 pointerEvents: "none",
                 transition: "transform 0.05s ease-out",
+                zIndex: 9999999, // 🧠 ensures cursor stays above all elements
             }}
         />
     );

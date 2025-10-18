@@ -51,3 +51,27 @@ body {
 .gallery-img {
   @apply rounded-2xl object-cover w-full transition-transform duration-300 hover:scale-105 hover:shadow-xl;
 }
+
+/* Example class for your custom cursor */
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px; /* adjust size */
+  height: 32px;
+  pointer-events: none; /* so it doesn’t block clicks */
+  z-index: 999999; /* 🔥 stays on top of everything */
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+/* ============================================================
+   💫 global CSS for smooth slide
+============================================================ */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-down {
+  animation: slideDown 0.3s ease forwards;
+}
