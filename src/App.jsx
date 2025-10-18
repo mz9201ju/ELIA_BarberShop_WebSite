@@ -106,8 +106,8 @@ function Header() {
           <nav className="flex flex-col items-start px-4 py-3 space-y-2">
             {renderNavLinks(() => setMenuOpen(false))}
             {/* Optional: Booking button also in mobile menu */}
-            <a href="tel:+12065551234" className="btn w-full justify-center mt-2">
-              <Phone className="w-4 h-4" /> (206) 555-1234
+            <a href="tel:+14255204447" className="btn w-full justify-center mt-2">
+              <Phone className="w-4 h-4" /> (425) 520-4447
             </a>
             <NavLink
               to="/booking"
