@@ -1,0 +1,75 @@
+body {
+  cursor: none;
+}
+
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  body {
+    cursor: auto;
+  }
+}
+
+.barber-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 42px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 999999;
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.barber-cursor__pole {
+  width: 14px;
+  height: 30px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: repeating-linear-gradient(
+    45deg,
+    #dc2626 0 5px,
+    #ffffff 5px 10px,
+    #2563eb 10px 15px,
+    #ffffff 15px 20px
+  );
+  background-size: 20px 20px;
+  animation: barber-pole-spin 0.45s linear infinite;
+  box-shadow:
+    inset 0 0 5px rgba(255, 255, 255, 0.4),
+    0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+.barber-cursor__cap {
+  position: absolute;
+  width: 18px;
+  height: 5px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #e2e8f0, #94a3b8);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+.barber-cursor__cap--top {
+  top: 4px;
+}
+
+.barber-cursor__cap--bottom {
+  bottom: 4px;
+}
+
+@keyframes barber-pole-spin {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 22px;
+  }
+}
+
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .barber-cursor {
+    display: none;
+  }
+}

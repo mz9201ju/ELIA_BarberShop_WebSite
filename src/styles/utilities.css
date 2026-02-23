@@ -1,0 +1,61 @@
+.container {
+  @apply max-w-6xl mx-auto px-4;
+}
+
+.btn {
+  @apply inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-brand-accent text-black font-semibold hover:opacity-90 transition;
+  min-height: 48px;
+  white-space: nowrap;
+}
+
+.card {
+  @apply bg-brand-card/80 backdrop-blur rounded-2xl shadow-[var(--shadow-soft)] border border-white/5;
+}
+
+.link {
+  @apply text-brand-accent hover:underline;
+}
+
+.gallery-img {
+  @apply rounded-2xl object-cover w-full h-56 md:h-64 lg:h-72 transition-transform duration-300 hover:scale-105 hover:shadow-xl;
+  content-visibility: auto;
+  contain-intrinsic-size: 288px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate-delay-100 {
+  animation-delay: 0.1s;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-down {
+  animation: slideDown 0.3s ease forwards;
+}
+
+header {
+  overflow-x: hidden;
+}

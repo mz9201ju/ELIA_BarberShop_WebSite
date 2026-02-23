@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion'
 import { ArrowRight, Star } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { HOME_USPS } from '../constants/siteData.js'
 
 
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
 function Hero() {
     return (
         <section className="container pt-14 pb-16 grid md:grid-cols-2 gap-10 items-center">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+            <div className="animate-fade-in-up">
                 <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
                     Sharp fades. Clean shaves. <span className="text-brand-accent">Zero fuss.</span>
                 </h1>
@@ -28,31 +28,35 @@ function Hero() {
                     <Link to="/booking" className="btn">Book Now <ArrowRight className="w-4 h-4" /></Link>
                     <Link to="/services" className="btn bg-transparent text-white border border-white/10 hover:bg-white/5">View Services</Link>
                 </div>
-            </motion.div>
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+            </div>
+            <div className="animate-fade-in-up animate-delay-100">
                 <div className="card overflow-hidden max-w-[270px] max-h-[400px] rounded-xl2 mx-auto">
-                    <img
-                        src={`${import.meta.env.BASE_URL}elia-barber-shop.png`}
-                        alt="Elia Barber Shop Logo"
-                        className="max-w-[400px] max-h-[400px]  object-contain object-center rounded-xl2 mx-auto"
-                    />
+                    <picture>
+                        <source srcSet={`${import.meta.env.BASE_URL}elia-barber-shop.avif`} type="image/avif" />
+                        <source srcSet={`${import.meta.env.BASE_URL}elia-barber-shop.webp`} type="image/webp" />
+                        <img
+                            src={`${import.meta.env.BASE_URL}elia-barber-shop.png`}
+                            alt="Elia Barber Shop Logo"
+                            className="max-w-[267px] max-h-[400px] object-contain object-center rounded-xl2 mx-auto"
+                            loading="eager"
+                            fetchPriority="high"
+                            decoding="async"
+                            width="267"
+                            height="400"
+                        />
+                    </picture>
                 </div>
-            </motion.div>
+            </div>
         </section>
     )
 }
 
 
 function USPs() {
-    const items = [
-        { title: 'Walk‑ins welcome', copy: 'But booking keeps your day on track' },
-        { title: 'Hot towel shaves', copy: 'Yes, the classic treatment' },
-        { title: 'Beard & lineup pros', copy: 'Sharp, symmetric, consistent' },
-    ]
     return (
         <section className="container grid md:grid-cols-3 gap-6">
-            {items.map((it, i) => (
-                <div key={i} className="card p-6">
+            {HOME_USPS.map((it) => (
+                <div key={it.title} className="card p-6">
                     <div className="flex items-center gap-2 text-brand-accent font-semibold"><Star className="w-4 h-4" />{it.title}</div>
                     <p className="text-brand-sub mt-1">{it.copy}</p>
                 </div>

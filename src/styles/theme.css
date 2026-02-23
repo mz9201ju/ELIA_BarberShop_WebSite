@@ -1,0 +1,21 @@
+@theme {
+  --color-brand-bg: #0f172a;
+  --color-brand-card: #111827;
+  --color-brand-accent: #f59e0b;
+  --color-brand-red: #ef4444;
+  --color-brand-text: #f8fafc;
+  --color-brand-sub: #94a3b8;
+
+  --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.15);
+  --radius-xl2: 1.25rem;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-brand-bg text-brand-text antialiased;
+}
