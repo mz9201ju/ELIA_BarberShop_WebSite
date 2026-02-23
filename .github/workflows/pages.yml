@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy ELIA BARBERSHOP to GitHub Pages
 
 on:
   push:
